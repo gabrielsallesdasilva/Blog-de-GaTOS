@@ -1,0 +1,219 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+:root{
+  font-size: 62.5%;
+
+  --color-background-white: hsl(0, 0%, 100%);
+  --color-background-secondary: hsl(195, 91%, 25%);
+  --color-background-search: hsla(0, 0%, 100%, 0.2);
+  --color-text-white: hsl(0, 0%, 100%);
+  --color-text-title: hsl(240, 6%, 13%);
+  --color-text-black: hsl(240, 6%, 7%);
+}
+
+#app{
+  max-width: 43rem;
+  margin-inline: auto;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  height: 100vh;
+}
+
+main{
+  
+  background-color: var(--color-background-white);
+  display: flex;
+  flex-direction: column;
+  
+}
+
+header{
+  background-color: var(--color-background-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 7.2rem;
+  padding: 1.2rem 2.8rem;
+  gap: 2.5rem;
+}
+
+header .img-logo{
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-text-white);
+  border-radius: 999px;
+}
+
+.img-perfil img{
+  width: 4.2rem;
+  height: 4.2rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+header form{
+  flex: 1;
+
+}
+
+.input-search label{
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.input-search input{
+  width: 100%;
+  height: 4rem;
+  padding: 1.2rem;
+  background-color: var(--color-background-search);
+  border: 0;
+  border-radius: .4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 100%;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+}
+
+.input-search input::placeholder{
+  color: var(--color-text-white);
+}
+
+.title{
+  padding: 3rem 6rem 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+h1, h2{
+  font-family: 'Mulish', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.like-unlike{
+  display: flex;
+  gap: 1.2rem;
+}
+
+.text{
+  font-size: 1.6rem;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  color: var(--color-text-black);
+  padding: 0 2.6rem 0 2rem;
+}
+
+.artigos{
+  margin: 3.4rem 2.6rem 4rem 2rem;
+  display: grid;
+  gap: 3.2rem;
+}
+
+.artigos figure{
+  display: flex;
+  gap:1.6rem
+}
+
+figure figcaption h3{
+  font-size: 1.8rem;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: var(--color-text-black);
+}
+
+figure figcaption .texto-artigo{
+  font-size: 1.4rem;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--color-text-black);
+  margin-top: 1.5rem;
+}
+
+footer{
+  background-color: var(--color-background-secondary);
+  height: 6.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .paragraf p{
+  font-size: 1.6rem;
+  color: var(--color-text-white);
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+}
+
+header{
+  --startY: -100%;
+  animation: move .3s;
+}
+
+footer{
+  --startY: 100%;
+  animation: move .2s;
+}
+
+@media(min-width: 1120px) {
+#app{
+  max-width: 100vw;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 130rem;
+  margin: 4rem auto;
+}
+
+.all-title{
+  width: 80rem;
+  height: 87rem;
+}
+
+.img-capa{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.title, .text{
+  padding: 0;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3.2rem 0;
+}
+
+.artigos{
+  width: 38rem;
+  height: 61rem;
+}
+}
+
+@keyframes move{
+  from{
+    transform: translateY(var(--startY)); 
+  }
+}
